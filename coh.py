@@ -1,6 +1,7 @@
-from asyncore import write
+
 import csv
 from re import search
+import re
 
 
 print("hello")
@@ -22,3 +23,6 @@ def coh ():
             lines.append(search(text))
 
         read_csv(path/"cash_on_hand.csv",lines) 
+
+        cash_on_hand = re.search(r"cash on hand")
+        input (f"the difference in day 40 to 41 is")
