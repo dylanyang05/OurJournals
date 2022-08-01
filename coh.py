@@ -22,7 +22,5 @@ def coh ():
             "Day_44", "3994410"
             "Day_45", "3243713"}
 
-
-
         path.csv.read(),lines
 
