@@ -13,8 +13,7 @@ def coh ():
     path = path.cwd()/"OURJOURNALS"/"cash_on_hand.csv"
     home = path.home()
     file_path = home/"OURJOURNALS"
-    cash_on_hand = path.glob("*.txt")
-    print(cash_on_hand)
+    print(file_path)
 
     lines = []
     for cash in cash_on_hand:
@@ -24,5 +23,4 @@ def coh ():
 
         read_csv(path/"cash_on_hand.csv",lines) 
 
-        cash_on_hand = re.search(r"cash on hand")
-        input (f"the difference in day 40 to 41 is")
+
