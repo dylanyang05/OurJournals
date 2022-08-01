@@ -15,7 +15,7 @@ def coh ():
     for cash in path:
         with cash.open(mode='r',encoding='UTF-8') as f:
             coh = {}
-            
+            Dict_List =  
 
 
         path.csv.read(),lines
