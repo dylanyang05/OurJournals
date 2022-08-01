@@ -13,7 +13,8 @@ def coh ():
     path = path.cwd()/"OURJOURNALS"/"cash_on_hand.csv"
     home = path.home()
     file_path = home/"OURJOURNALS"
-    print(file_path)
+    cash_on_hand = path.read("*.txt")
+    print(cash_on_hand)
 
     lines = []
     for cash in cash_on_hand:
@@ -22,5 +23,4 @@ def coh ():
             lines.append(search(text))
 
         read_csv(path/"cash_on_hand.csv",lines) 
-
 
