@@ -1,3 +1,4 @@
+from pathlib import Path
 import api, cash_on_hands, overheads, profit_loss
 
 def main():
@@ -8,7 +9,6 @@ def main():
 
 main()
 
-print(f"[REAL TIME CURRENCY CONVERSION RATE] USD1 = {rate}")
-print(f"[HIGHEST OVERHEADS] {} = {}")
-print(f"[CASH DEFICIT] DAY: {}, AMOUNT: {}")
-print(f"[PROFIT DEFICIT] DAY: {}, AMOUNT: {}")
+fp = Path.cwd()/"summary_report.txt"
+with fp.open(mode='w',encoding='UTF-8') as file:
+    file.write("[REAL TIME CURRENCY CONVERSION RATE] USD1 = {rate}\n[HIGHEST OVERHEADS] {} = {}\n[CASH DEFICIT] DAY: {}, AMOUNT: {}\n,[PROFIT DEFICIT] DAY: {}, AMOUNT: {}")
