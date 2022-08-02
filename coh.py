@@ -15,11 +15,10 @@ def coh ():
     lines = []
     for cash in path:
         with cash.open(mode='r',encoding='UTF-8') as f:
-            reader = csv.reader(path)
-            next(reader)
-    for lines in reader:
+            for lines in reader:
+                reader = csv.reader(path)
+                next(reader)
         print(lines)
-
 coh = [['Day40','4765310'],['Day41','3300148'],['Day42','3542813'],['Day43','2548561'],['Day44','3994410'],['Day45','3243713']]
 
 
