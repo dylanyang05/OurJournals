@@ -1,5 +1,6 @@
 
 import csv
+from difflib import Differ
 from re import search
 import re
 
@@ -14,7 +15,12 @@ def coh ():
     lines = []
     for cash in path:
         with cash.open(mode='r',encoding='UTF-8') as f:
-            coh = [["Day_40", "4765310"],["Day_41", "3300148"],["Day_42", "3542813"], ["Day_43", "2548561"],["Day_44", "3994410"]["Day_45", "3243713"]]
-    
-        path.csv.read(),lines
+            reader = csv.reader(path)
+            next(reader)
+    for lines in reader:
+        print(lines)
+
+coh = [['Day40','4765310'],['Day41','3300148'],['Day42','3542813'],['Day43','2548561'],['Day44','3994410'],['Day45','3243713']]
+
+print((coh[0][1]))
 
