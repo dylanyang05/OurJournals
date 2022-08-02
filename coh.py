@@ -1,6 +1,7 @@
 
+from ast import Return
 import csv
-from difflib import Differ
+from importlib.resources import path
 from re import search
 import re
 
@@ -20,7 +21,6 @@ def coh ():
                 next(reader)
         print(lines)
 coh = [['Day40','4765310'],['Day41','3300148'],['Day42','3542813'],['Day43','2548561'],['Day44','3994410'],['Day45','3243713']]
-
 
 
 
