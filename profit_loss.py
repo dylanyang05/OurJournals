@@ -5,6 +5,7 @@ from pathlib import Path
 profit_loss_file = Path.cwd()/"csv_reports"/"Profits and Loss.csv"
 
 profit_loss_list = []
+final_pnl_list = []
 
 with profit_loss_file.open(mode = "r", encoding = "UTF-8", newline = "") as profit_loss :
     readfiles = csv.reader(profit_loss)
