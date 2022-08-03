@@ -19,5 +19,6 @@ with cash_on_hand.open(mode = "r", encoding = "UTF-8", newline = "") as cash_on_
 print(cash_on_hand_list)
 print(coh_info)
 
-    
+for amount in cash_on_hand_list:
+      
 coh = [['Day40','4765310'],['Day41','3300148'],['Day42','3542813'],['Day43','2548561'],['Day44','3994410'],['Day45','3243713']]
