@@ -1,4 +1,5 @@
 import csv
+from email import message
 from pathlib import Path
 from unicodedata import category
 
@@ -32,7 +33,12 @@ for information in Overheads_list:
     if information[1] == str(highestvalue):
         highest_overhead=information[0]
 
+summary_path= Path.cwd()/"summary_report.txt"
+
+
 def Overheads_details():
     message= (f"[HIGHEST OVERHEADS]: {highest_overhead}: SGD{highestvalue}")
-    print (message)
+    with summary_path.open (mode="a", encoding= "UTF-8") as file:
+        file.write(message)
+        file.close
 Overheads_details()
