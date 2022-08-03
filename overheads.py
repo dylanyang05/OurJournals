@@ -3,9 +3,7 @@ from pathlib import Path
 from unicodedata import category
 
 
-filepath= Path.cwd()/"CSV_reports"
-
-Overheads_file= Path.cwd()/"CSV_reports"/"Overheads.csv"
+Overheads_file= Path.cwd()/"OurJournals"/"Overheads.csv"
 
 OurJournals_Overheads_list=[]
 
@@ -21,11 +19,10 @@ for information in OurJournals_Overheads_list:
 
 
 def highestOverheads_details():
+    highestvalue=-1
     for overheaddetails in final_Overheadslist:
-        highestvalue= max(final_Overheadslist)
-        if overheaddetails > highestvalue:
+        if overheaddetails> highestvalue:
             highestvalue=overheaddetails
             index=(final_Overheadslist.index(highestvalue))
-        message= (f"[HIGHEST OVERHEADS]", category[index],":", highestvalue)
-        
+            message= (f"[HIGHEST OVERHEADS]", category[index],":", highestvalue)
     print (message)
