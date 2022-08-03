@@ -6,7 +6,6 @@ from re import search
 import re
 
 
-print("hello")
 def read_csv(output_path,lines):
     with open(output_path,"w", newline="") as f:
         reader = csv.reader
