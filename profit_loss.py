@@ -20,3 +20,10 @@ el2= []
 for numbers in profit_loss_list:
    day = numbers[0]
    amount = numbers[4]
+   el.append(day)
+   el2.append(amount)
+   #print(el)
+   #print(el2)
+   print(slice(amount))
+
+
