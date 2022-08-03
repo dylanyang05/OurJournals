@@ -11,7 +11,7 @@ def main():
     #Running coh_function() to write report
     coh.coh_difference(forex)
     #Running pl_function() to write report
-    profit_loss.pl_function(forex)
+    profit_loss.pnl_difference(forex)
 
 #Running main function to activate autonmated program
 main()

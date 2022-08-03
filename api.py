@@ -15,13 +15,13 @@ def convert():
     rate = forex['Realtime Currency Exchange Rate']['5. Exchange Rate']
 
     #Assigning file path to variable
-    summary_path = Path.cwd()/"summary_report.txt"
+    summary_path = Path.cwd()/"summary_reports.txt"
     #Opening file in write mode
     with summary_path.open(mode='w',encoding='UTF-8') as summary:
         #Write report information into file
-        summary.write(f"[REAL TIME CURRENCY CONVERSION RATE]: USD1 = SGD{rate}")
+        summary.write(f"[REAL TIME CURRENCY CONVERSION RATE]: USD1 = SGD{rate}\n")
         #Closing file
         summary.close()
 
     #Return exchange rate
-    return rate
+    return float(rate)

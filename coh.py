@@ -24,7 +24,7 @@ def coh_difference(rate):
             difference_sgd = difference * rate
             difference_day = coh_list[number+1][0]
             with summary_path.open(mode='a',encoding='UTF-8') as file:
-                file.write(f"[CASH DEFICIT] DAY{difference_day}, AMOUNT : SGD{difference_sgd}")
+                file.write(f"[CASH DEFICIT] DAY{difference_day}, AMOUNT : SGD{round(difference_sgd,2)}" + "\n")
 
 
         
