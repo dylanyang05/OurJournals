@@ -39,11 +39,11 @@ summary_path= Path.cwd()/"summary_reports.txt"
 def Overheads_details(rate):
     #Multiply the highest value by the rate to get the final amount
     highestvalue_sgd= highestvalue*rate
-    #Create message for the highest overhead output followed by the final amount
+    #Create message for the highest overhead output followed by the final amount, round up to 2 decimal place
     message= (f"[HIGHEST OVERHEADS]: {highest_overhead}: SGD{round(highestvalue_sgd,2)}")
     #Using the .open() function to append to the final txt file and encoding which is to include longer/all characters and save it as file
     with summary_path.open (mode="a", encoding= "UTF-8") as file:
-        #Using .write() function to write the message into the final txt file
+        #Using .write() function to write the message into the final txt file and indicate end of text line
         file.write(message + "\n")
         #Using .close function to close file to prevent issues of corrupted data
         file.close()
