@@ -1,8 +1,8 @@
 from ast import Return
 import csv
-from importlib.resources import path
+from pathlib import Path
 
-profit_loss_file = path.cwd()/"csv_reports"/"Profits and Loss.csv"
+profit_loss_file = Path.cwd()/"csv_reports"/"Profits and Loss.csv"
 
 profit_loss_list = []
 
