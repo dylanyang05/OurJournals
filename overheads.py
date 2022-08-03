@@ -21,10 +21,11 @@ for information in OurJournals_Overheads_list:
 print(final_Overheadslist)
 
 def highestOverheads_details():
-    highestvalue=-1
-    for overheaddetails in final_Overheadslist:
-        if overheaddetails> highestvalue:
-            highestvalue=overheaddetails
-            index=(final_Overheadslist.index(highestvalue))
-            message= (f"[HIGHEST OVERHEADS]",category[index],":", highestvalue)
-    print (message)
+
+    #for overheaddetails in final_Overheadslist:
+        #if overheaddetails> highestvalue:
+            highestvalue=max(final_Overheadslist)
+            #index=(final_Overheadslist.index(highestvalue))
+            message= (f"[HIGHEST OVERHEADS]:", highestvalue)
+            print (message)
+highestOverheads_details()
