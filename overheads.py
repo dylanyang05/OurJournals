@@ -1,23 +1,48 @@
-
 import csv
-import re
+from pathlib import Path
+from unicodedata import category
 
-def read_csv(output_path,lines):
-    with open (output_path, "w", newline="" ) as file:
-        reader= csv.reader
+#Create file path to overheads csv file
+Overheads_file= Path.cwd()/"csv_reports"/"Overheads.csv"
 
-def oh ():
-    path = path.cwd()/"OURJOURNALS"/"Overheads.csv"
+#Create an empty list to store data into the list 
+OurJournals_Overheads_list=[]
 
-overhead_info = [['Salary Expense',30.88], 
-                ['Internet Expense',0.47], 
-                ['Marketing Expense',4.93],
-                ['Rental Expense',20.06],
-                ['Overflow Expense-Retail',0.84],
-                ['Penalty Expense', 8.91],
-                ['Depreciation Expense',16.85],
-                ['Shipping Expense',0.54],
-                ['Human Resource Expense', 16.52]]
-higheest_expense = overhead_info.values()
-max_expense= max(higheest_expense)
-print ("[HIGHEST OVERHEAD] SALARY EXPENSE:"), max_expense
+#Using the .open() funtion to acess mode of file which is for reading the csv file, encoding which is to inclue longer/all characters and save files as overheads
+with Overheads_file.open (mode="r", encoding= "UTF-8") as Overheads:
+    
+#Using .reader() function in csv module to read the data in overheads file
+    readfiles= csv.reader(Overheads)
+
+#Using next() function to return the next item in the list
+    next(readfiles)
+
+#Apply for loop to create a list comprehension expression since there is 2 items in each tuple, largest value and list that consist of different expenses
+    for line in readfiles:
+
+#Using append function to access largest value of the nested list to the empty list
+        OurJournals_Overheads_list.append(line[1])
+
+#Create another empty list to store the final data        
+final_Overheadslist= []
+
+#Apply for loop to create a list 
+for information in OurJournals_Overheads_list:
+
+#Convert the string of info into a float 
+    information= float(information)
+
+#Using append.() function to add a new information to the end of the list
+    final_Overheadslist.append(information)
+
+#Define the highest overhead category and value
+def highestOverheads_details():
+
+    #for overheaddetails in final_Overheadslist:
+        #if overheaddetails> highestvalue:
+            highestvalue=max(final_Overheadslist)
+            #index=(final_Overheadslist.index(highestvalue))
+            message= (f"[HIGHEST OVERHEADS]:", highestvalue)
+            return message
+
+print (highestOverheads_details())
