@@ -29,12 +29,13 @@ final_Overheadslist= []
 #Apply for loop to create a list 
 for information in OurJournals_Overheads_list:
 
-#Convert the info into float 
+#Convert the string of info into a float 
     information= float(information)
+
+#Using append.() function to add a new information to the end of the list
     final_Overheadslist.append(information)
 
-print(final_Overheadslist)
-
+#Define the highest overhead category and value
 def highestOverheads_details():
 
     #for overheaddetails in final_Overheadslist:
