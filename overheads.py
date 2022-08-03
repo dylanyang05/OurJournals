@@ -1,23 +1,28 @@
-
 import csv
-import re
+from pathlib import Path
+from unicodedata import category
 
-def read_csv(output_path,lines):
-    with open (output_path, "w", newline="" ) as file:
-        reader= csv.reader
 
-def oh ():
-    path = path.cwd()/"OURJOURNALS"/"Overheads.csv"
+Overheads_file= Path.cwd()/"OurJournals"/"Overheads.csv"
 
-overhead_info = [['Salary Expense', 30.88], 
-                ['Internet Expense', 0.47], 
-                ['Marketing Expense', 4.93],
-                ['Rental Expense', 20.06],
-                ['Overflow Expense-Retail', 0.84],
-                ['Penalty Expense', 8.91],
-                ['Depreciation Expense', 16.85],
-                ['Shipping Expense', 0.54],
-                ['Human Resource Expense', 16.52]]
-highest_expense = overhead_info.values()
-max_expense = max(highest_expense)
-print ("[HIGHEST OVERHEAD] SALARY EXPENSE:"), max_expense
+OurJournals_Overheads_list=[]
+
+with Overheads_file.open (mode="r", encoding= "UTF-8", newline='') as Overheads:
+    readfiles= csv.reader(Overheads)
+    for line in readfiles:
+        OurJournals_Overheads_list.append(line[1])
+        
+final_Overheadslist= []
+for information in OurJournals_Overheads_list:
+    information=float (information)
+    final_Overheadslist.append(information)
+
+
+def highestOverheads_details():
+    highestvalue=-1
+    for overheaddetails in final_Overheadslist:
+        if overheaddetails> highestvalue:
+            highestvalue=overheaddetails
+            index=(final_Overheadslist.index(highestvalue))
+            message= (f"[HIGHEST OVERHEADS]", category[index],":", highestvalue)
+    print (message)
