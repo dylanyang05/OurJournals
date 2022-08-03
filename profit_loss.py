@@ -1,23 +1,23 @@
 from ast import Return
 import csv
-from importlib.resources import path
-from re import search
-import re
+from pathlib import Path
 
-def read_csv(output_path, lines) : 
-    with open(output_path, "w", newline = "") as f : 
-        reader = csv.reader
+profit_loss_file = Path.cwd()/"csv_reports"/"Profits and Loss.csv"
 
-def profit_loss () : 
-    path = path.cwd()/"OURJOURNALS"/"Profits and Loss.csv"
+profit_loss_list = []
 
-    lines = []
-    for profit in path :
-        with profit.open(mode = "r", encoding = "UTF-8") as f :
-            for lines in reader :
-                reader = csv.reader(path)
-                next(reader)
-        print(lines)
+with profit_loss_file.open(mode = "r", encoding = "UTF-8", newline = "") as profit_loss :
+    readfiles = csv.reader(profit_loss)
+    next(readfiles)
+    for line in readfiles: 
+        profit_loss_list.append(line[1])
+
+info_profitloss_list = []
+for information in profit_loss_list :
+    information = float(information)
+    info_profitloss_list.append(information)
+
+print(info_profitloss_list)
 
 profit_loss = [["Day40", "5298840"], ["Day41", "5197222"], ["Day42", "5319067"], ["Day43", "5374926"], ["Day44", "5866565"], ["Day45", "5884455"]]
 day_40 = float(profit_loss[0][1])
