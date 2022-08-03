@@ -9,7 +9,7 @@ def main():
     #Running Overheads_details() to write report
     overheads.Overheads_details(forex)
     #Running coh_function() to write report
-    coh.coh_function(forex)
+    coh.coh_difference(forex)
     #Running pl_function() to write report
     profit_loss.pl_function(forex)
 
