@@ -47,5 +47,3 @@ def Overheads_details(rate):
         file.write(message)
         #Using .close function to close file to prevent issues of corrupted data
         file.close()
-
-
