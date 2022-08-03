@@ -1,10 +1,11 @@
 import csv
 from pathlib import Path
+from unicodedata import category
 
 
-filepath= Path.cwd()/"Overheads.csv"
+filepath= Path.cwd()/"CSV_reports"
 
-Overheads_file= Path.cwd()/"Overheads.csv"
+Overheads_file= Path.cwd()/"CSV_reports"/"Overheads.csv"
 
 OurJournals_Overheads_list=[]
 
@@ -20,11 +21,11 @@ for information in OurJournals_Overheads_list:
 
 
 def highestOverheads_details():
-    highestvalue= max(final_Overheadslist)
     for overheaddetails in final_Overheadslist:
         highestvalue= max(final_Overheadslist)
         if overheaddetails > highestvalue:
             highestvalue=overheaddetails
-        message= (f"[HIGHEST VALUE] Salary Expense:", highestvalue)
+            index=(final_Overheadslist.index(highestvalue))
+        message= (f"[HIGHEST OVERHEADS]", category[index],":", highestvalue)
         
-        print (message)
+    print (message)
