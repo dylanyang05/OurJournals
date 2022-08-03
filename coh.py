@@ -5,18 +5,19 @@ from importlib.resources import path
 import re
 
 
-def read_csv(output_path,lines):
-    with open(output_path,"w", newline="") as f:
-        reader = csv.reader
-def coh ():
-    path = path.cwd()/"OURJOURNALS"/"cash_on_hand.csv"
+cash_on_hand = path.cwd()/"csv_reports"/"cash on hand.csv"
+cash_on_hand_list = []
 
-    lines = []
-    for cash in path:
-        with cash.open(mode='r',encoding='UTF-8') as f:
-            for lines in reader:
-                reader = csv.reader(path)
-                next(reader)
-        print(lines)
+with cash_on_hand.open(mode = "r", encoding = "UTF-8", newline = "") as cash_on_hand :
+        readfiles = csv.reader(cash_on_hand)
+        next(readfiles)
+        for line in readfiles: 
+            cash_on_hand_list.append(line[1])
+
+info_coh_list = []
+for information in cash_on_hand_list :
+    information = float(information)
+    info_coh_list.append(information)
+    
 coh = [['Day40','4765310'],['Day41','3300148'],['Day42','3542813'],['Day43','2548561'],['Day44','3994410'],['Day45','3243713']]
 
