@@ -31,6 +31,6 @@ difference1 = day_41 - day_40
 difference2 = day_43 - day_42
 difference3 = day_45 - day_44
 
-print("The profit and loss on Day 41 is lower than Day 40 by", (difference1))
+print("The profit and loss on Day 41 is lower than Day 40 by", abs(difference1))
 print("The profit and loss on Day 43 is lower than Day 42 by", (difference2))
 print("The profit and loss on Day 45 is lower than Day 44 by", (difference3))
