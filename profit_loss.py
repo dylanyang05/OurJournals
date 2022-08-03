@@ -10,27 +10,12 @@ with profit_loss_file.open(mode = "r", encoding = "UTF-8", newline = "") as prof
     readfiles = csv.reader(profit_loss)
     next(readfiles)
     for line in readfiles: 
-        profit_loss_list.append(line[1])
+        profit_loss_list.append(line)
 
-info_profitloss_list = []
-for information in profit_loss_list :
-    information = float(information)
-    info_profitloss_list.append(information)
+#print(profit_loss_list)
 
-print(info_profitloss_list)
-
-profit_loss = [["Day40", "5298840"], ["Day41", "5197222"], ["Day42", "5319067"], ["Day43", "5374926"], ["Day44", "5866565"], ["Day45", "5884455"]]
-day_40 = profit_loss[0][1]
-day_41 = profit_loss[1][1]
-day_42 = profit_loss[2][1]
-day_43 = profit_loss[3][1]
-day_44 = profit_loss[4][1]
-day_45 = profit_loss[5][1]
-
-difference1 = day_41 - day_40
-difference2 = day_43 - day_42
-difference3 = day_45 - day_44
-
-print("The profit and loss on Day 41 is lower than Day 40 by", abs(difference1))
-print("The profit and loss on Day 43 is lower than Day 42 by", (difference2))
-print("The profit and loss on Day 45 is lower than Day 44 by", (difference3))
+el= []
+el2= []
+for numbers in profit_loss_list:
+   day = numbers[0]
+   amount = numbers[4]
