@@ -19,10 +19,17 @@ with Overheads_file.open (mode="r", encoding= "UTF-8") as Overheads:
 
 #Apply for loop to create a list comprehension expression since there is 2 items in each tuple, largest value and list that consist of different expenses
     for line in readfiles:
+
+#Using append function to access largest value of the nested list to the empty list
         OurJournals_Overheads_list.append(line[1])
-        
+
+#Create another empty list to store the final data        
 final_Overheadslist= []
+
+#Apply for loop to create a list 
 for information in OurJournals_Overheads_list:
+
+#Convert the info into float 
     information= float(information)
     final_Overheadslist.append(information)
 
@@ -36,5 +43,5 @@ def highestOverheads_details():
             #index=(final_Overheadslist.index(highestvalue))
             message= (f"[HIGHEST OVERHEADS]:", highestvalue)
             return message
-            
+
 print (highestOverheads_details())
