@@ -20,12 +20,12 @@ for information in profit_loss_list :
 print(info_profitloss_list)
 
 profit_loss = [["Day40", "5298840"], ["Day41", "5197222"], ["Day42", "5319067"], ["Day43", "5374926"], ["Day44", "5866565"], ["Day45", "5884455"]]
-day_40 = float(profit_loss[0][1])
-day_41 = float(profit_loss[1][1])
-day_42 = float(profit_loss[2][1])
-day_43 = float(profit_loss[3][1])
-day_44 = float(profit_loss[4][1])
-day_45 = float(profit_loss[5][1])
+day_40 = profit_loss[0][1]
+day_41 = profit_loss[1][1]
+day_42 = profit_loss[2][1]
+day_43 = profit_loss[3][1]
+day_44 = profit_loss[4][1]
+day_45 = profit_loss[5][1]
 
 difference1 = day_41 - day_40
 difference2 = day_43 - day_42
